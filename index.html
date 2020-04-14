@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Profile Web</title>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="game.html">Game</a>
+        <a href="hardware.html">Hardware</a>
+        <a href="subcribe.html">Subcribe</a>
+        <a href="simulate.html">Simulate</a>
+      </div>
+    <div class="container">
+        
+        <nav>
+            <ul>
+                <li><a id="clickmenu" onclick="openNav()" style="font-size:50px">&#8801;</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="hardware.html">Hardware</a></li>
+                <li><a href="subcribe.html">Subcribe</a></li>
+                <li><a href="simulate.html">Simulate</a></li>
+            </ul>
+        </nav>
+        <div id="quote">
+            <span style="font-size:100px;">"</span>
+            <br>
+            appropriate price, high performance
+        </div>
+        <div id="content">
+            asd
+        </div>
+    </div>
+    
+</body>
+    <style>
+        #quote{
+            color:white;
+            margin: 50px;
+            font-size:50px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #content{
+            background-color: #222;
+            color:white;
+            padding : 20px;
+        }
+    </style>
+    <script>document.getElementById("quote").style.height = window.innerHeight - document.getElementsByTagName("nav")[0].clientHeight - 100 + "px";</script>
+    <script src="./assets/js/sidenav.js"></script>
+</html>

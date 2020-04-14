@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Profile Web</title>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="game.html">Game</a>
+        <a href="hardware.html">Hardware</a>
+        <a href="subcribe.html">Subcribe</a>
+        <a href="simulate.html">Simulate</a>
+      </div>
+    <div class="container">
+        
+        <nav>
+            <ul>
+                <li><a id="clickmenu" onclick="openNav()" style="font-size:50px">&#8801;</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="hardware.html">Hardware</a></li>
+                <li><a href="subcribe.html">Subcribe</a></li>
+                <li><a href="simulate.html">Simulate</a></li>
+            </ul>
+        </nav>
+        <div id="subscribe">
+            Subscribe for more News and Article
+            <form id="formail" action="" method="POST">
+                <input id="email" name="email" placeholder="Email here"/>                
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+    <style>
+        #subscribe{
+            color:white;
+            margin: 50px;
+            font-size:30px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #subscribe input{
+            background-color: whitesmoke;
+            width:300px;
+            padding:10px;
+            border-radius: 10px;
+            border : 2px solid transparent;
+            margin: 10px;
+        }
+        #subscribe button{
+            background-color: whitesmoke;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border : none;
+            /* border-color: transparent; */
+        }
+    </style>
+    <script src="./assets/js/sidenav.js"></script>
+    <script>
+        var x = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+        var emailInput = document.getElementById("email");
+        emailInput.onkeyup = function(e){
+            if(x.test(emailInput.value)){
+                emailInput.style.borderColor = "forestgreen";
+                return;
+            }
+            emailInput.style.borderColor = "crimson";
+        }
+        var formail = document.getElementById("formail");
+        formail.onsubmit = function(e){
+            e.preventDefault();
+            if(emailInput.value == ""){
+                alert("please fill your email first");
+                return;
+            }
+            if(emailInput.value != "" && !x.test(emailInput.value)){
+                alert("Your email is not in right format");
+                return;
+            }
+            alert(emailInput.value);
+        }
+    </script>
+</html>
